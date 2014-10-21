@@ -24,17 +24,20 @@ namespace CarDB.Model
             return null;
         }
 
-        public Car GetCarById(int CarID)
+        public Car GetCarById(int carId)
         {
-            return db.Cars.FirstOrDefault(d => d.CarID == CarID);
+            return db.Cars.FirstOrDefault(d => d.CarId == carId);
         }
 
-        public void EditCar(int CarID, string markName, string model)
+        public void EditCar(int carId, string markName, string model)
         {
-            Car car = db.Cars.FirstOrDefault(d => d.CarID == CarID);
-            car.Model = model;
-            Mark mark = GetOrCreateMark(markName);
-            car.Marks = mark;
+            Car car = db.Cars.FirstOrDefault(d => d.CarId == carId);
+            if (car != null)
+            {
+                car.Model = model;
+                Mark mark = GetOrCreateMark(markName);
+                car.Marks = mark;
+            }
             db.SaveChanges();
         }
 

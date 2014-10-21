@@ -7,11 +7,3 @@ E:\ника\ExtNetApp\CarDB\bin\Debug\EntityFramework.xml
 E:\ника\ExtNetApp\CarDB\bin\Debug\EntityFramework.SqlServer.xml
 E:\ника\ExtNetApp\CarDB\obj\Debug\CarDB.dll
 E:\ника\ExtNetApp\CarDB\obj\Debug\CarDB.pdb
-e:\nika\ExtNetApp\CarDB\bin\Debug\CarDB.dll.config
-e:\nika\ExtNetApp\CarDB\bin\Debug\CarDB.dll
-e:\nika\ExtNetApp\CarDB\bin\Debug\CarDB.pdb
-e:\nika\ExtNetApp\CarDB\bin\Debug\EntityFramework.dll
-e:\nika\ExtNetApp\CarDB\bin\Debug\EntityFramework.xml
-e:\nika\ExtNetApp\CarDB\obj\Debug\CarDB.dll
-e:\nika\ExtNetApp\CarDB\obj\Debug\CarDB.pdb
-e:\nika\ExtNetApp\CarDB\bin\Debug\ru\EntityFramework.resources.dll

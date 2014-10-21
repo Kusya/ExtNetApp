@@ -8,7 +8,7 @@ namespace CarDB.Model
 {
     public class Car
     {
-        public int CarID { get; set; }
+        public int CarId { get; set; }
         public virtual Mark Marks { get; set; }
         public string Model { get; set; }
         public virtual Country MakingCountry { get; set; }

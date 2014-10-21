@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CarDB.Model;
+using Ext.Net.MVC.Examples.Areas.GridPanel_Commands.Row_Command;
 using ExtNetApp.Models;
 
 namespace ExtNetApp.Controllers
@@ -12,7 +13,6 @@ namespace ExtNetApp.Controllers
     {
         //
         // GET: /Home/
-
         private readonly CarService carService = new CarService();
 
         public ActionResult Index()
@@ -35,7 +35,7 @@ namespace ExtNetApp.Controllers
             {
                 carViews.Add(new CarViewModel()
                 {
-                    CarID = car.CarID,
+                    CarID = car.CarId,
                    // MakingCountry = car.MakingCountry.Name,
                     Marks = car.Marks.Name,
                     Model = car.Model
@@ -43,8 +43,13 @@ namespace ExtNetApp.Controllers
             }
 
             return View(carViews);
-
         }
+
+        public ActionResult Test()
+        {
+            return View(Companies.GetAllCompanies());
+        }
+
 
     }
 }
