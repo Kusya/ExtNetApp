@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ExtNetApp.Models.CarViewModel>
+@{
+    ViewBag.Title = "GetAllCar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>GetAllCar</h2>
+
+
+<table>
+    <tr>
+        <th>
+            ЛАПАПААП
+        </th>
+        <th>
+            ЛАПА2
+        </th>
+        <th>
+            СУДНЫЙ ДЕНЬ
+        </th>
+        <th>
+            ДА ПРИБУДЕТ
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MakingCountry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+        </tr>
+    }
+</table>
+
