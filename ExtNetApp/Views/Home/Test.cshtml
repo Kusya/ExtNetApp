@@ -4,70 +4,53 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-    <script>
-        var template = '<span style="color:{0};">{1}</span>';
+<h1>Basic Row Command</h1>
 
-        var change = function (value) {
-            return Ext.String.format(template, (value > 0) ? "green" : "red", value);
-        };
+<br />
 
-        var pctChange = function (value) {
-            return Ext.String.format(template, (value > 0) ? "green" : "red", value + "%");
-        };
-    </script>
-
-
-    <h1>Basic Row Command</h1>
-
-    <br />
-
-    <h3>Icons with tips</h3>
+<h3>Icons with tips</h3>
 @(Html.X().ResourceManager())
-    @(Html.X().Store()
+
+@(Html.X().Store()
         .ID("Store1")
         .Model(Html.X().Model()
             .Fields(
-                new ModelField("company"),
-                new ModelField("price", ModelFieldType.Float),
-                new ModelField("change", ModelFieldType.Float),
-                new ModelField("pctChange", ModelFieldType.Float),
-                new ModelField("lastChange", ModelFieldType.Date, "M/d hh:mmtt")
+                Html.X().ModelField().Name("CarId").Type(ModelFieldType.Int),
+                Html.X().ModelField().Name("Marks").Type(ModelFieldType.String),
+                Html.X().ModelField().Name("Model").Type(ModelFieldType.String),
+                Html.X().ModelField().Name("MakingCountry").Type(ModelFieldType.String),
+                Html.X().ModelField().Name("Continent").Type(ModelFieldType.String)
             )
         )
         .DataSource(Model)
-    )
 
-    
-
-    @(Html.X().GridPanel()
+)
+@(Html.X().GridPanel()
         .Title("Icons with text")
         .Width(600)
         .Height(300)
         .StoreID("Store1")
         .ColumnModel(
             Html.X().Column()
-                .Text("Company")
-                .DataIndex("company")
+                .Text("Car №")
+                    .DataIndex("CarId")
                 .Flex(1),
             Html.X().Column()
-                .Text("Price")
-                .DataIndex("price")
-                .Width(75)
-                .Renderer(RendererFormat.UsMoney),
+                .Text("Car mark")
+                    .DataIndex("Marks")
+                .Width(75),
             Html.X().Column()
-                .Text("Change")
-                .DataIndex("change")
-                .Width(75)
-                .Renderer("change"),
+                .Text("Car model")
+                    .DataIndex("Model")
+                .Width(75),
             Html.X().Column()
-                .Text("Change")
-                .DataIndex("pctChange")
-                .Width(75)
-                .Renderer("pctChange"),
-            Html.X().DateColumn()
-                .Text("Last Updated")
-                .Width(85)
-                .DataIndex("lastChange"),
+                .Text("Produsing Country")
+                    .DataIndex("MakingCountry")
+                .Width(100),
+            Html.X().Column()
+                .Text("Continent")
+                    .DataIndex("Continent")
+                .Width(85),
             Html.X().CommandColumn()
                 .Width(110)
                 .Commands(
@@ -83,6 +66,6 @@
                 )
                 .Listeners(ls => ls.Command.Handler = "Ext.Msg.alert(command, record.data.company);")
         )
-    )
+)
 
-    
+

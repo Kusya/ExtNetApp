@@ -7,9 +7,11 @@ namespace ExtNetApp.Models
 {
     public class CarViewModel
     {
-        public int CarID { get; set; }
+        public int CarId { get; set; }
         public string Marks { get; set; }
         public string Model { get; set; }
         public string MakingCountry { get; set; }
+
+        public string Continent { get; set; }
     }
 }
