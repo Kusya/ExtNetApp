@@ -1,9 +1,6 @@
-CarDB/bin/Debug/*
-ExtNetApp/bin/*
-CarDB/obj/Debug/
-ExtNetApp/obj/Debug/*
-CarDB/obj/Debug/*
+CarDB/bin/Debug/
+ExtNetApp/bin/
+ExtNetApp/obj/Debug/
 CarDB/obj/Debug/
 ExtNetApp/App_Data/
-ExtNetApp/App_Data/CarDB.model.CarStoreEntities.mdf
-ExtNetApp/App_Data/CarDB.model.CarStoreEntities_log.ldf
+CarDB/obj/Debug/
