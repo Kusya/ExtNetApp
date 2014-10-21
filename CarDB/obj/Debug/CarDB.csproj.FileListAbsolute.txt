@@ -1,9 +1,0 @@
-E:\ника\ExtNetApp\CarDB\bin\Debug\CarDB.dll.config
-E:\ника\ExtNetApp\CarDB\bin\Debug\CarDB.dll
-E:\ника\ExtNetApp\CarDB\bin\Debug\CarDB.pdb
-E:\ника\ExtNetApp\CarDB\bin\Debug\EntityFramework.dll
-E:\ника\ExtNetApp\CarDB\bin\Debug\EntityFramework.SqlServer.dll
-E:\ника\ExtNetApp\CarDB\bin\Debug\EntityFramework.xml
-E:\ника\ExtNetApp\CarDB\bin\Debug\EntityFramework.SqlServer.xml
-E:\ника\ExtNetApp\CarDB\obj\Debug\CarDB.dll
-E:\ника\ExtNetApp\CarDB\obj\Debug\CarDB.pdb
