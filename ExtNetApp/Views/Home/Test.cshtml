@@ -66,6 +66,31 @@
                 )
                 .Listeners(ls => ls.Command.Handler = "Ext.Msg.alert(command, record.data.company);")
         )
+        
+            .TopBar(
+                    Html.X().Toolbar()
+                        .Items(
+                            Html.X().Button()
+                                .Text("Add")
+                                .Icon(Icon.Add)
+                                .DirectClickAction("EditCarItem")
+                                .Handler("this.up('grid').store.insert(0, new Person());this.up('grid').editingPlugin.startEdit(0, 0);"),
+
+                            Html.X().Button()
+                                .ItemID("btnRemove")
+                                .Text("Delete")
+                                .Icon(Icon.Exclamation)
+                                .Handler("this.up('grid').deleteSelected();")
+                        )
+                )
+                .Plugins(
+                    Html.X().RowEditing()
+                        .Listeners(l =>
+                        {
+                            l.CancelEdit.Handler = "if(e.record.phantom){e.store.remove(e.record);}";
+                        })
+                )
+                
 )
 
 

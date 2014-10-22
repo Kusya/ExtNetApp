@@ -29,7 +29,7 @@ namespace CarDB.Model
             return db.Cars.FirstOrDefault(d => d.CarId == carId);
         }
 
-        public void EditCar(int carId, string markName, string model)
+        public void EditCar(int carId, string markName, string model, string country, string continent)
         {
             Car car = db.Cars.FirstOrDefault(d => d.CarId == carId);
             if (car != null)
@@ -37,17 +37,23 @@ namespace CarDB.Model
                 car.Model = model;
                 Mark mark = GetOrCreateMark(markName);
                 car.Marks = mark;
+                Country contry = GetOrCreateCountry(country);
+                contry.Continent = continent;
+
             }
             db.SaveChanges();
         }
 
-        public void AddCar(string markName, string model)
+        public void AddCar(int carId, string markName, string model, string country, string continent)
         {
             Mark mark = GetOrCreateMark(markName);
+            //car.Marks = mark;
+            Country contry = GetOrCreateCountry(country);
+            contry.Continent = continent;
             Car car = db.Cars.FirstOrDefault(d => d.Model == model);
             if (car == null)
             {
-                car = new Car { Model = model, Marks = mark };
+                car = new Car { Model = model, Marks = mark, MakingCountry = contry };
                 db.Cars.Add(car);
                 db.SaveChanges();
             }
@@ -63,6 +69,17 @@ namespace CarDB.Model
                 db.SaveChanges();
             }
             return mark;
+        }
+        public Country GetOrCreateCountry(string countryName)
+        {
+            Country country = db.Countries.FirstOrDefault(c => c.Name == countryName);
+            if (country == null)
+            {
+                country = new Country { Name = countryName };
+                db.Countries.Add(country);
+                db.SaveChanges();
+            }
+            return country;
         }
     }    
 }
