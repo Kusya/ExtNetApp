@@ -12,11 +12,7 @@ namespace CarDB.Model
 
         public List<Car> GetAllCars()
         {
-            if (db.Cars.Any())
-            {
-                return db.Cars.ToList();
-            }
-            return null;
+            return db.Cars.Any() ? db.Cars.ToList() : null;
         }
 
         public Car GetCarById(int carId)
