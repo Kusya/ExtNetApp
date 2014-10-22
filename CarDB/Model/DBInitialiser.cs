@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace CarDB.Model
 {
 
-    public class DBInitialiser : DropCreateDatabaseAlways<CarStoreEntities>
+    public class DBInitialiser : DropCreateDatabaseIfModelChanges<CarStoreEntities>
         {
             protected override void Seed(CarStoreEntities context)
             {

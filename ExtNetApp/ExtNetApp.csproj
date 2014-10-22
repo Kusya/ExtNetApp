@@ -154,7 +154,6 @@
     </Compile>
     <Compile Include="Models\CarViewModel.cs" />
     <Compile Include="Models\ExtNetModel.cs" />
-    <Compile Include="Models\Row_CommandModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
