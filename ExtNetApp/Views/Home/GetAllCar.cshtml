@@ -50,7 +50,7 @@
                     X.Toolbar()
                         .Items(
                             X.Button().ItemID("btnRemove").Text("Delete").Icon(Icon.Exclamation)
-                            //.DirectClickAction("DeleteCarItem")
+                            .DirectClickAction("DeleteCarItem")
                             .Handler("this.up('grid').deleteSelected();")
                         )
                 ),
@@ -64,10 +64,10 @@
                 d.Add(new Parameter("LabelWidth", "90"));
             })
             .Items(
-                X.TextField().Name("CarID").FieldLabel("СarId"),
+                    X.TextField().Name("CarId").FieldLabel("Car №"),
                 X.TextField().Name("Marks").FieldLabel("Mark"),
                 X.TextField().Name("Model").FieldLabel("Model"),
-                X.TextField().Name("MakingCountry").FieldLabel("Country"),
+                    X.TextField().Name("MakingCountry").FieldLabel("Produsing Country"),
                 X.TextField().Name("Continent").FieldLabel("Continent")
             )
         )
